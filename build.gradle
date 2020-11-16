@@ -2,15 +2,18 @@ plugins {
     id "jacoco"
     id "java"
     id "application"
-    id "org.sonarqube" version "2.7"
+    id "org.sonarqube" version "3.0"
 }
 
-description = 'Example of SonarQube Scanner for Gradle Usage'
+description = 'Java Gradle example for SonarCloud'
 version = '1.0'
 
 sonarqube {
     properties {
-        property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
+        property 'sonar.projectName', 'Java Gradle example for SonarCloud'
+        property "sonar.projectKey", "claudiasonarova_java-gradle-example"
+        property "sonar.organization", "claudiasonarova-1"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
