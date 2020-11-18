@@ -14,15 +14,20 @@ import java.util.TreeSet;
 
 public class App {
   public static void main(String[] args) throws Exception {
+
+    System.out.println(new App().getGreeting());
+
     if (args == null || args.length != 1) {
       System.err.println("Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>");
       return;
     }
+
     File propertiesFile = new File(args[0]);
     if (!propertiesFile.exists()) {
       System.err.println("File '" + args[0] + "' doesn't exist \n" + "Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>\n");
       return;
     }
+
     Properties properties = new Properties();
     properties.load(new FileInputStream(propertiesFile));
     String jdbcDriver = properties.getProperty("jdbc.driver");
@@ -31,6 +36,7 @@ public class App {
     String jdbcPassword = properties.getProperty("jdbc.password");
     Class.forName(jdbcDriver);
     Connection connection = DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
+
     try {
       DatabaseMetaData meta = connection.getMetaData();
       SortedSet<String> tableNames = new TreeSet<String>();
@@ -68,5 +74,9 @@ public class App {
       e.printStackTrace();
       connection.close();
     }
+  }
+
+  public String getGreeting() {
+        return "Hello world.";
   }
 }
