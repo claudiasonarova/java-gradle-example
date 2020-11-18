@@ -1,5 +1,6 @@
 package com.acme;
 
+/*
 import java.io.File;
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -11,20 +12,28 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.SortedSet;
 import java.util.TreeSet;
+*/
 
 public class App {
+
   public static void main(String[] args) throws Exception {
-
     System.out.println(new App().getGreeting());
-
+/*
     if (args == null || args.length != 1) {
-      System.err.println("Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>");
+      System.err.println(
+        "Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>"
+      );
       return;
     }
 
     File propertiesFile = new File(args[0]);
     if (!propertiesFile.exists()) {
-      System.err.println("File '" + args[0] + "' doesn't exist \n" + "Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>\n");
+      System.err.println(
+        "File '" +
+        args[0] +
+        "' doesn't exist \n" +
+        "Syntax: java -cp ... org.activiti.engine.impl.db.DbSchemaExport <path-to-properties-file> <path-to-export-file>\n"
+      );
       return;
     }
 
@@ -35,7 +44,11 @@ public class App {
     String jdbcUsername = properties.getProperty("jdbc.username");
     String jdbcPassword = properties.getProperty("jdbc.password");
     Class.forName(jdbcDriver);
-    Connection connection = DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
+    Connection connection = DriverManager.getConnection(
+      jdbcUrl,
+      jdbcUsername,
+      jdbcPassword
+    );
 
     try {
       DatabaseMetaData meta = connection.getMetaData();
@@ -51,16 +64,27 @@ public class App {
         ResultSet columns = meta.getColumns(null, null, tableName, null);
         while (columns.next()) {
           String columnName = columns.getString(4);
-          String columnTypeAndSize = columns.getString(6) + " " + columns.getInt(7);
+          String columnTypeAndSize =
+            columns.getString(6) + " " + columns.getInt(7);
           columnDescriptions.put(columnName, columnTypeAndSize);
         }
         System.out.println(tableName);
-        for (String columnName : new TreeSet<String>(columnDescriptions.keySet())) {
-          System.out.println("  " + columnName + " " + columnDescriptions.get(columnName));
+        for (String columnName : new TreeSet<String>(
+          columnDescriptions.keySet()
+        )) {
+          System.out.println(
+            "  " + columnName + " " + columnDescriptions.get(columnName)
+          );
         }
         System.out.println("INDEXES");
         SortedSet<String> indexNames = new TreeSet<String>();
-        ResultSet indexes = meta.getIndexInfo(null, null, tableName, false, true);
+        ResultSet indexes = meta.getIndexInfo(
+          null,
+          null,
+          tableName,
+          false,
+          true
+        );
         while (indexes.next()) {
           String indexName = indexes.getString(6);
           indexNames.add(indexName);
@@ -74,9 +98,10 @@ public class App {
       e.printStackTrace();
       connection.close();
     }
+*/
   }
 
   public String getGreeting() {
-        return "Hello world.";
+    return "Hello world.";
   }
 }
