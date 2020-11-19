@@ -3,7 +3,7 @@ package com.acme;
 public class App {
 
   public static void main(String[] args) {
-    app = new App();
+    App app = new App();
     System.out.println(app.getGreeting());
     System.out.println(app.getParting());
   }
