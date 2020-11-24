@@ -21,7 +21,7 @@ public class App {
     return "The weather is fine.";
   }
 
-  // getOtherThing
+  // getOtherThing (add stufffor another push)
   public String getOtherThing() {
     return "Yabadabadoo.";
   }
