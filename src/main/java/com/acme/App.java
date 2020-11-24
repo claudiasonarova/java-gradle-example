@@ -8,6 +8,7 @@ public class App {
     App app = new App();
     System.out.println(app.getGreeting());
     System.out.println(app.getStatement());
+    System.out.println(app.getOtherThing());
   }
 
   // getGreeting
@@ -18,5 +19,10 @@ public class App {
   // getStatement
   public String getStatement() {
     return "The weather is fine.";
+  }
+
+  // getOtherThing
+  public String getOtherThing() {
+    return "Yabadabadoo.";
   }
 }
