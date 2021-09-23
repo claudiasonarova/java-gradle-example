@@ -17,6 +17,6 @@ public class App {
 
   // getStatement
   public String getStatement() {
-    return "The weather is fine.";
+    return "The weather is lovely.";
   }
 }
