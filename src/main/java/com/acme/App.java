@@ -13,6 +13,6 @@ public class App {
   }
 
   public String getParting() {
-    return "Goodbye world.";
+    return "Goodbye world. How sad.";
   }
 }
