@@ -27,7 +27,7 @@ public class App {
   }
   
    // getYetAnotherThing (add stufffor another push)
-  public String getOtherThing() {
+  public String getYetAnotherThing() {
     return "Woops.";
   }
 }
