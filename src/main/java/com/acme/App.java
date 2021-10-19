@@ -25,4 +25,9 @@ public class App {
   public String getOtherThing() {
     return "Yabadabadoo.";
   }
+  
+   // getYetAnotherThing (add stufffor another push)
+  public String getOtherThing() {
+    return "Woops.";
+  }
 }
